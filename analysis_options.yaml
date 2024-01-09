@@ -21,8 +21,33 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
-    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    avoid_print: true
+    prefer_single_quotes: true
+    always_use_package_imports: true
 
+    #  // name of Lint: use_build_context_synchronously :
+    # Description: When a BuildContext is used, its mounted property must be checked after an asynchronous gap.
+    # Bad Practice:
+    # void onButtonTapped(BuildContext context) async {
+    # await Future.delayed(const Duration(seconds: 1));
+    # Navigator.of(context).pop();
+    # }
+    # Good practice:
+    # 1.
+    # void onButtonTapped(BuildContext context) {
+    # Navigator.of(context).pop();
+    # }
+    # 2.
+    # void onButtonTapped() async {
+    # await Future.delayed(const Duration(seconds: 1));
+
+    # if (!context.mounted) return;
+    # Navigator.of(context).pop();
+    # }
+    use_build_context_synchronously: true
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+analyzer:
+  errors:
+    invalid_annotation_target: ignore
