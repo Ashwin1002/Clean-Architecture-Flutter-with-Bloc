@@ -13,15 +13,11 @@ class ThemeCubit extends HydratedCubit<ThemeModeState> {
 
   @override
   ThemeModeState? fromJson(Map<String, dynamic> json) {
-    switch (json['themeMode']) {
-      case 'ThemeMode.dark':
-        return const ThemeModeState(themeMode: ThemeMode.dark);
-      case 'ThemeMode.light':
-        return const ThemeModeState(themeMode: ThemeMode.light);
-      case 'ThemeMode.system':
-      default:
-        return const ThemeModeState(themeMode: ThemeMode.system);
-    }
+    return switch (json['themeMode']) {
+      'ThemeMode.dark' => const ThemeModeState(themeMode: ThemeMode.dark),
+      'ThemeMode.light' => const ThemeModeState(themeMode: ThemeMode.light),
+      _ => const ThemeModeState(themeMode: ThemeMode.system)
+    };
   }
 
   @override
