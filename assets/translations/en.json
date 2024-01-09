@@ -1,4 +1,6 @@
 {
-    "app_name": "Flutter Clean Architecture Boilerplate"
-  
+    "app_name": "Flutter Clean Architecture Boilerplate",
+    "changeLanguage": "Change Language",
+    "en": "English",
+    "ne": "Nepali"
 }
