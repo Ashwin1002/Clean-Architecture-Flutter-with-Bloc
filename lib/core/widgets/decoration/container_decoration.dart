@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:medhavi_app/core/constants/colors.dart';
+import 'package:medhavi_app/core/utils/extensions/theme_extensions.dart';
 import 'package:medhavi_app/core/utils/size/size_utils.dart';
 
 class CustomDecoration {
   const CustomDecoration._();
 
-  static containerDecoration({
+  static containerDecoration(
+    BuildContext context, {
     Color? backgroundColor,
     BorderRadius? borderRadius,
     BoxBorder? border,
@@ -39,7 +40,7 @@ class CustomDecoration {
     Color? bottomShadowColor,
   }) {
     return BoxDecoration(
-      color: backgroundColor ?? AppColors.white,
+      color: backgroundColor ?? context.theme.backgroundPrimary,
       borderRadius: boxShape == BoxShape.circle
           ? null
           : borderRadius ?? BorderRadius.circular(12.adaptSize),
@@ -50,13 +51,13 @@ class CustomDecoration {
       boxShadow: hasShadow
           ? [
               BoxShadow(
-                color: bottomShadowColor ?? const Color(0xFFA3B1C6),
+                color: bottomShadowColor ?? context.theme.contentSecondary!,
                 blurRadius: blurRadius,
                 offset: shadowOffsetBottomRight ?? const Offset(5, 5),
                 spreadRadius: spreadRadius,
               ),
               BoxShadow(
-                color: topShadowColor ?? AppColors.white,
+                color: topShadowColor ?? context.theme.backgroundPrimary!,
                 blurRadius: blurRadius,
                 offset: shadowOffsetTopLeft ?? -const Offset(5, 5),
                 spreadRadius: spreadRadius,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medhavi_app/core/constants/colors.dart';
+import 'package:medhavi_app/core/utils/extensions/theme_extensions.dart';
 import 'package:medhavi_app/core/utils/size/size_utils.dart';
 import 'package:medhavi_app/core/widgets/decoration/container_decoration.dart';
 
@@ -60,10 +60,11 @@ class _MyDraggableSheetState extends State<MyDraggableSheet> {
       builder: (_, scrollController) {
         return Container(
           decoration: CustomDecoration.containerDecoration(
+            context,
             borderRadius: const BorderRadius.vertical(
               top: Radius.circular(25.0),
             ),
-            backgroundColor: AppColors.white,
+            backgroundColor: context.theme.backgroundPrimary,
           ),
           child: Column(
             children: [
@@ -93,7 +94,8 @@ class BottomSheetAnchor extends StatelessWidget {
             height: 4.5.v,
             width: 35.h,
             decoration: CustomDecoration.containerDecoration(
-              backgroundColor: AppColors.greyLight.withOpacity(.5),
+              context,
+              backgroundColor: context.theme.contentPrimary,
             ),
           ),
         ],

@@ -1,14 +1,12 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:medhavi_app/core/constants/colors.dart';
 import 'package:medhavi_app/core/utils/extensions/context_extension.dart';
-import 'package:medhavi_app/core/utils/extensions/double_extension.dart';
+import 'package:medhavi_app/core/utils/extensions/num_extension.dart';
+import 'package:medhavi_app/core/utils/extensions/theme_extensions.dart';
 import 'package:medhavi_app/core/utils/size/size_utils.dart';
 import 'package:medhavi_app/core/widgets/decoration/container_decoration.dart';
 
-typedef DropdownDataModel<T> = T;
-
-class CustomDropdownFieldWidget<DropdownDataModel> extends StatelessWidget {
+class CustomDropdownFieldWidget<T> extends StatelessWidget {
   const CustomDropdownFieldWidget({
     super.key,
     this.value,
@@ -21,10 +19,10 @@ class CustomDropdownFieldWidget<DropdownDataModel> extends StatelessWidget {
 
   final String label;
   final String? hinText;
-  final DropdownDataModel? value;
-  final List<DropdownMenuItem<DropdownDataModel>> items;
-  final void Function(DropdownDataModel?)? onChanged;
-  final String? Function(DropdownDataModel?)? validator;
+  final T? value;
+  final List<DropdownMenuItem<T>> items;
+  final void Function(T?)? onChanged;
+  final String? Function(T?)? validator;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class CustomDropdownFieldWidget<DropdownDataModel> extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        DropdownButtonFormField2<DropdownDataModel>(
+        DropdownButtonFormField2<T>(
           hint: Text(
             hinText ?? '',
             style: const TextStyle(),
@@ -50,7 +48,8 @@ class CustomDropdownFieldWidget<DropdownDataModel> extends StatelessWidget {
             height: 55,
             width: context.size?.width,
             decoration: CustomDecoration.containerDecoration(
-              border: Border.all(color: AppColors.greyLight),
+              context,
+              border: Border.all(color: context.theme.borderOpaque!),
               hasShadow: false,
               borderRadius: BorderRadius.circular(8.0),
             ),
@@ -64,16 +63,16 @@ class CustomDropdownFieldWidget<DropdownDataModel> extends StatelessWidget {
           ),
           menuItemStyleData: MenuItemStyleData(
             selectedMenuItemBuilder: (context, child) => Container(
-              color: AppColors.primaryLight,
+              color: context.theme.backgroundAccent,
               child: Row(
                 children: [
                   Expanded(
                     child: child,
                   ),
                   15.h.horizontalSpace,
-                  const Icon(
+                  Icon(
                     Icons.check_circle_outline_outlined,
-                    color: AppColors.backgroundLight,
+                    color: context.theme.backgroundAccent,
                   ),
                   15.h.horizontalSpace,
                 ],

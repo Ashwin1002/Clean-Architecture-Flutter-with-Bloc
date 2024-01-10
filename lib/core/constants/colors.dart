@@ -3,63 +3,111 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const Color primaryLight = Color(0xff4659A4);
-  static const Color primaryDark = Color(0xff4659A4);
+  ///Foundation Light
+  static const Color primaryLightA = Color(0xff030918);
+  static const Color primaryLightB = Color(0xffF0F0F2);
 
-  static const Color secondaryLight = Color(0xfff38e49);
-  static const Color secondaryDark = Color(0xff492710);
+  static const Color accentLight = Color(0xff27ABF1);
+  static const Color warningLight = Color(0xffFFC043);
 
-  static const Color backgroundDark = Color(0xFF111B21);
-  static const Color backgroundLight = Color(0xFFF0F0F3);
+  static const Color positiveLight = Color(0xff06A457);
+  static const Color negativeLight = Color(0xffE11900);
 
-  static const Color greyDark = Color(0xFF5A5A5A);
-  static const Color greyLight = Colors.grey;
+  ///Background Light
+  static const Color backgroundPrimaryLight = Color(0xffFFFFFF);
+  static const Color backgroundInverserPrimaryLight = Color(0xff030918);
 
-  static const Color blueDark = Color(0xFF53BDEB);
-  static const Color blueLight = Color(0xFF027EB5);
-  static const Color blue = Color(0xFF1367CF);
+  static const Color backgroundSecondaryLight = Color(0xffF8F8F8);
+  static const Color backgroundInverserSecondaryLight = Color(0xff353A46);
 
-  static const Color greenDark = Color(0xFF00A884);
-  static const Color greenLight = Color(0xFF008069);
+  static const Color backgroundTeritiaryLight = Color(0xffDFDFDF);
+  static const Color backgroundAccentLight = Color(0xffD4EEFC);
 
-  static const Color greyBackground = Color(0xFF202C33);
+  ///Content light
+  static const Color contentPrimaryLight = Color(0xff030918);
+  static const Color contentInversePrimaryLight = Color(0xffFFFFFF);
 
-  static const Color redDark = Color(0xFFC62828);
-  static const Color redLight = Color(0xFFF44336);
+  static const Color contentSecondaryLight = Color(0xff686B74);
+  static const Color contentInverseSecondaryLight = Color(0xffCDCED1);
 
-  static const Color shadowColorLightBlue = Color(0xFFA3B1C6);
+  static const Color contentTeritiaryLight = Color(0xff9A9DA3);
+  static const Color contentInverseTeritiaryLight = Color(0xff9A9DA3);
 
-  static const Color transparent = Colors.transparent;
+  ///border light
+  static const Color borderOpaqueLight = Color(0xffB3B5BA);
+  static const Color borderInverseOpaqueLight = Color(0xff686B74);
 
-  static const Color profileBgColor = Color(0XFFEDE7F9);
+  static const Color borderSelectedLight = Color(0xff27ABF1);
+  static const Color borderInverseSelectedLight = Color(0xffFFFFFF);
 
-  static const Color white = Colors.white;
+  /// foundation dark
+  static const Color primaryDarkA = Color(0xffE6E6E8);
+  static const Color primaryDarkB = Color(0xff353A46);
 
-  static const Color black38 = Colors.black38;
+  static const Color accentDark = Color(0xff77C4F4);
+  static const Color warningDark = Color(0xffF6DE6B);
 
-  static const Color black = Colors.black;
+  static const Color positiveDark = Color(0xff65B891);
+  static const Color negativeDark = Color(0xffF47C95);
 
-  static getDropdownColor(String value) =>
-      value.toLowerCase() == '-- Select Option --'.toLowerCase()
-          ? AppColors.greyLight
-          : AppColors.black;
+  ///Background Dark
+  static const Color backgroundPrimaryDark = Color(0xff030918);
+  static const Color backgroundInverserPrimaryDark = Color(0xffE6E6E8);
 
-  static const MaterialColor primaryMapColor =
-      MaterialColor(0xff4659A4, colorMap);
+  static const Color backgroundSecondaryDark = Color(0xff4F535D);
+  static const Color backgroundInverserSecondaryDark = Color(0xffB3B5BA);
 
-  static const MaterialColor primaryDarkMapColor =
-      MaterialColor(0xff4659A4, colorMap);
+  static const Color backgroundTeritiaryDark = Color(0xffB3B5BA);
+  static const Color backgroundAccentDark = Color(0xff1A2E44);
 
-  static const Map<int, Color> colorMap = {
-    50: Color.fromRGBO(70, 89, 164, .1),
-    100: Color.fromRGBO(70, 89, 164, .2),
-    200: Color.fromRGBO(70, 89, 164, .3),
-    300: Color.fromRGBO(70, 89, 164, .4),
-    400: Color.fromRGBO(70, 89, 164, .5),
-    500: Color.fromRGBO(70, 89, 164, .6),
-    600: Color.fromRGBO(70, 89, 164, .7),
-    700: Color.fromRGBO(70, 89, 164, .8),
-    800: Color.fromRGBO(70, 89, 164, .9),
-    900: Color.fromRGBO(70, 89, 164, 1),
-  };
+  ///Content Dark
+  static const Color contentPrimaryDark = Color(0xffFFFFFF);
+  static const Color contentInversePrimaryDark = Color(0xff4F535D);
+
+  static const Color contentSecondaryDark = Color(0xffCDCED1);
+  static const Color contentInverseSecondaryDark = Color(0xffB3B5BA);
+
+  static const Color contentTeritiaryDark = Color(0xff9A9DA3);
+  static const Color contentInverseTeritiaryDark = Color(0xffB3B5BA);
+
+  ///border Dark
+  static const Color borderOpaqueDark = Color(0xffB3B5BA);
+  static const Color borderInverseOpaqueDark = Color(0xffB3B5BA);
+
+  static const Color borderSelectedDark = Color(0xff77C4F4);
+  static const Color borderInverseSelectedDark = Color(0xff353A46);
+
+  static const MaterialColor primarySwatchLight = MaterialColor(
+    0xFF2BB8D6,
+    <int, Color>{
+      50: Color.fromRGBO(43, 184, 214, .1),
+      100: Color.fromRGBO(43, 184, 214, .2),
+      200: Color.fromRGBO(43, 184, 214, .3),
+      300: Color.fromRGBO(43, 184, 214, .4),
+      400: Color.fromRGBO(43, 184, 214, .5),
+      500: Color.fromRGBO(43, 184, 214, .6),
+      600: Color.fromRGBO(43, 184, 214, .7),
+      700: Color.fromRGBO(43, 184, 214, .8),
+      800: Color.fromRGBO(43, 184, 214, .9),
+      900: Color.fromRGBO(43, 184, 214, 1),
+    },
+  );
+
+  static const MaterialColor primarySwatchDark = MaterialColor(
+    0xFF2BB8D6,
+    <int, Color>{
+      50: Color.fromRGBO(119, 196, 244, .1),
+      100: Color.fromRGBO(119, 196, 244, .2),
+      200: Color.fromRGBO(119, 196, 244, .3),
+      300: Color.fromRGBO(119, 196, 244, .4),
+      400: Color.fromRGBO(119, 196, 244, .5),
+      500: Color.fromRGBO(119, 196, 244, .6),
+      600: Color.fromRGBO(119, 196, 244, .7),
+      700: Color.fromRGBO(119, 196, 244, .8),
+      800: Color.fromRGBO(119, 196, 244, .9),
+      900: Color.fromRGBO(119, 196, 244, 1),
+    },
+  );
+
+  static const Color transparent = Color(0x00000000);
 }

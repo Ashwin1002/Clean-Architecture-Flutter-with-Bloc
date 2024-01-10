@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:medhavi_app/core/utils/size/device_size.dart';
 
 // This functions are responsible to make UI responsive across all the mobile devices.
@@ -17,8 +19,8 @@ extension ResponsiveExtension on num {
 
   ///This method is used to get device viewport height.
   get height {
-    num statusBar = 0;
-    num bottomBar = 80;
+    num statusBar = Platform.isAndroid ? 24 : 44;
+    num bottomBar = 0;
     num screenHeight = Device.height - statusBar - bottomBar;
     return screenHeight;
   }

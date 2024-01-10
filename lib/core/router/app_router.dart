@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:medhavi_app/core/router/auth_guard.dart';
 
-import 'app_router.gr.dart';
+import 'package:medhavi_app/core/router/app_router.gr.dart';
 
 @AutoRouterConfig()
 class AppRouter extends $AppRouter {

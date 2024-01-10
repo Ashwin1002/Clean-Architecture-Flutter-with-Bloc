@@ -8,7 +8,7 @@ import 'package:url_launcher/url_launcher.dart';
 ///
 /// Example: https://www.google.com/search?q=flutter -> google.com
 String extractPathWithoutSchema(String domain) {
-  RegExp pathRegExp = RegExp(r"^(?:https?://)?(?:www\.)?([^/]+)(.*)$");
+  RegExp pathRegExp = RegExp(r'^(?:https?://)?(?:www\.)?([^/]+)(.*)$');
   final match = pathRegExp.firstMatch(domain);
   if (match != null) {
     String withoutSchema = match.group(1) ?? '';
