@@ -5,4 +5,6 @@ extension BuildContextExtension on BuildContext {
 
   double get deviceWidth => MediaQuery.sizeOf(this).width;
   double get deviceHeight => MediaQuery.sizeOf(this).height;
+
+  TextTheme get textTheme => Theme.of(this).textTheme;
 }

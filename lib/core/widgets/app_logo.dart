@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medhavi_app/core/constants/images.dart';
+import 'package:medhavi_app/core/utils/size/size_utils.dart';
+import 'package:medhavi_app/core/widgets/svg_viewer.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({
@@ -12,6 +15,10 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset('assets/icons/Logo.png', height: height, width: width);
+    return SvgViewer.fromAsset(
+      path: AssetList.appLogoNoBG,
+      height: height ?? 56.v,
+      width: width ?? 155.h,
+    );
   }
 }

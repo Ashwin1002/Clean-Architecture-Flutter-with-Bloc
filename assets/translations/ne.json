@@ -2,5 +2,14 @@
     "app_name": "Flutter Clean Architecture Boilerplate",
     "changeLanguage": "भासा परिवर्तन हर्नुहोस्!",
     "en": "अंग्रेजी",
-    "ne": "नेपाली"
+    "ne": "नेपाली",
+    "log_in": "लग - इन",
+    "email": "इ - मेल ठेगाना",
+    "password": "पासवर्ड",
+    "login": "लग - इन",
+    "forgot_password":"पासवर्ड भुल्नु भयो?",
+    "sign_up_with_email": "इमेलको साथ साइन अप गर्नुहोस्",
+    "or": "वा",
+    "continue_with_google": "Google सँग जारी राख्नुहोस्",
+    "continue_with_apple": "Apple सँग जारी राख्नुहोस्"
 }

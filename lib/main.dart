@@ -26,10 +26,10 @@ void main() async {
     EasyLocalization(
       path: 'assets/translations',
       supportedLocales: const <Locale>[
-        Locale('en'),
-        Locale('np'),
+        // Locale('en'),
+        Locale('ne'),
       ],
-      fallbackLocale: const Locale('en'),
+      fallbackLocale: const Locale('ne'),
       useFallbackTranslations: true,
       child: const MyApp(),
     ),

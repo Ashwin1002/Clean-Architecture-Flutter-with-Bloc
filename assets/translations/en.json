@@ -2,5 +2,14 @@
     "app_name": "Flutter Clean Architecture Boilerplate",
     "changeLanguage": "Change Language",
     "en": "English",
-    "ne": "Nepali"
+    "ne": "Nepali",
+    "log_in": "Log In",
+    "email": "Email address",
+    "password": "password",
+    "login": "Login",
+    "forgot_password":"Forgot password?",
+    "sign_up_with_email": "Sign up with Email",
+    "or": "or",
+    "continue_with_google": "Continue With Google",
+    "continue_with_apple": "Continue with Apple"
 }

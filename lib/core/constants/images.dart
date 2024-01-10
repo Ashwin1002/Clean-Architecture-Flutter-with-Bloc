@@ -1,7 +1,7 @@
 class AssetList {
-  static const String iconPath = 'assets/icons/';
-  static const String imagePath = 'assets/images/';
-  static const String lottiePath = 'assets/lottie/';
+  static const String iconPath = 'assets/icons';
+  static const String imagePath = 'assets/images';
+  static const String lottiePath = 'assets/lottie';
 
   ///icons
   static const String addIcon = '$iconPath/add.svg';
@@ -23,4 +23,5 @@ class AssetList {
 
   ///app logo
   static const String appLogoNoBG = '$imagePath/app_icon.svg';
+  static const String appLogoNoTitle = '$imagePath/app_logo.svg';
 }
