@@ -5,14 +5,14 @@ class AssetList {
 
   ///icons
   static const String addIcon = '$iconPath/add.svg';
-  static const String appleIcon = '$iconPath/appleIcon.svg';
+  static const String appleIcon = '$iconPath/apple.svg';
   static const String arrowDownIcon = '$iconPath/arrow_down.svg';
   static const String arrowRightIcon = '$iconPath/arrow_right.svg';
   static const String closeIcon = '$iconPath/close.svg';
   static const String dashboardIcon = '$iconPath/dashboard.svg';
   static const String dateIcon = '$iconPath/date.svg';
   static const String googleIcon = '$iconPath/google.svg';
-  static const String hidePassIcon = '$iconPath/hidePassIcon.svg';
+  static const String hidePassIcon = '$iconPath/hide_pass.svg';
   static const String homeIcon = '$iconPath/home.svg';
   static const String menuIcon = '$iconPath/menu.svg';
   static const String moreIcon = '$iconPath/more.svg';

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -80,35 +81,21 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        maxHeight: context.deviceHeight * .3,
-        minHeight: 0,
-      ),
-      child: TextFormField(
-        initialValue: initialValue,
-        controller: textEditingController,
-        obscureText: isObscure ?? false,
-        maxLines: maxLines ?? 1,
-        minLines: minLines ?? 1,
-        maxLengthEnforcement: MaxLengthEnforcement.enforced,
-        cursorColor: context.theme.accent,
-        keyboardType: keyboardtype,
-        focusNode: focusNode,
-        validator: validator,
-        decoration: InputDecoration(
-          alignLabelWithHint: alignLableWithHint,
-          counterText: '',
-          prefixIcon: prefixIcon,
-          label: Wrap(
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 4.v),
+          child: Wrap(
             spacing: 2,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: [
               Text(
-                label,
+                label.tr(),
                 style: labelStyle ?? context.textTheme.labelSmall,
               ),
-              if (required)
+              if (isRequired)
                 Text(
                   '*',
                   style: context.textTheme.labelSmall
@@ -116,84 +103,111 @@ class CustomTextFormField extends StatelessWidget {
                 ),
             ],
           ),
-          // prefixIcon: Icon(Icons.email),
-          filled: true,
-          fillColor: fillColor ?? context.theme.backgroundPrimary,
-          hintText: hinText,
-          hintStyle: hintTextStyle ??
-              context.textTheme.bodyMedium
-                  ?.copyWith(color: context.theme.contentTeritiary),
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 20.0),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: borderSideColor ?? context.theme.contentTeritiary!,
-                width: 1.0),
-            borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-          ),
-
-          focusColor: context.theme.accent,
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: context.theme.accent!, width: 1.0),
-            borderRadius: BorderRadius.all(AppScales.mediumRadius),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: context.theme.negative!, width: 1.0),
-            borderRadius: BorderRadius.all(AppScales.mediumRadius),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: context.theme.contentTeritiary!.withOpacity(0.5),
-                width: 1.0),
-            borderRadius: BorderRadius.all(AppScales.mediumRadius),
-          ),
-
-          iconColor: context.theme.contentTeritiary,
-
-          suffixIconConstraints: BoxConstraints(
-            maxHeight: 25,
-            maxWidth: context.deviceWidth * .12,
-          ),
-          suffixIcon: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 12.h),
-            child: suffixIcon,
-          ),
-          prefixIconConstraints: BoxConstraints(
-            maxHeight: 25,
-            maxWidth: context.deviceHeight * .12,
-          ),
-          prefixIconColor: context.theme.contentTeritiary,
-          suffixIconColor: context.theme.contentTeritiary,
-
-          error: errorText != null
-              ? Row(
-                  children: [
-                    Icon(
-                      CupertinoIcons.exclamationmark_circle,
-                      size: 20.0,
-                      color: context.theme.negative,
-                    ),
-                    8.h.horizontalSpace,
-                    Text(
-                      errorText ?? '',
-                      style: TextStyle(
-                        color: context.theme.contentTeritiary,
-                      ),
-                    )
-                  ],
-                )
-              : null,
         ),
-        inputFormatters: inputFormatters,
-        onChanged: onChanged,
-        onFieldSubmitted: onFieldSubmitted,
-        textInputAction: textInputAction,
-        autofocus: autoFocus ?? false,
-        maxLength: maxLength,
-        readOnly: readOnly ?? false,
-        onSaved: onSaved,
-        onTap: onTap,
-      ),
+        ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: context.deviceHeight * .3,
+            minHeight: 0,
+          ),
+          child: TextFormField(
+            initialValue: initialValue,
+            controller: textEditingController,
+            obscureText: isObscure ?? false,
+            maxLines: maxLines ?? 1,
+            minLines: minLines ?? 1,
+            maxLengthEnforcement: MaxLengthEnforcement.enforced,
+            style: context.textTheme.bodyMedium,
+            cursorColor: context.theme.accent,
+            keyboardType: keyboardtype,
+            focusNode: focusNode,
+            validator: validator,
+            decoration: InputDecoration(
+              alignLabelWithHint: alignLableWithHint,
+              counterText: '',
+              prefixIcon: prefixIcon,
+
+              // prefixIcon: Icon(Icons.email),
+              filled: true,
+              fillColor: fillColor ?? context.theme.backgroundSecondary,
+              hintText: hinText,
+              hintStyle: hintTextStyle ??
+                  context.textTheme.bodyMedium
+                      ?.copyWith(color: context.theme.contentTeritiary),
+              contentPadding:
+                  EdgeInsets.symmetric(vertical: 12.v, horizontal: 14.h),
+              border: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: borderSideColor ?? context.theme.contentTeritiary!,
+                    width: 1.0),
+                borderRadius: BorderRadius.all(AppScales.mediumRadius),
+              ),
+
+              focusColor: context.theme.accent,
+              focusedBorder: OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: context.theme.accent!, width: 1.0),
+                borderRadius: BorderRadius.all(AppScales.mediumRadius),
+              ),
+              errorBorder: OutlineInputBorder(
+                borderSide:
+                    BorderSide(color: context.theme.negative!, width: 1.0),
+                borderRadius: BorderRadius.all(AppScales.mediumRadius),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                    color: context.theme.contentTeritiary!.withOpacity(0.5),
+                    width: 1.0),
+                borderRadius: BorderRadius.all(AppScales.mediumRadius),
+              ),
+
+              iconColor: context.theme.contentTeritiary,
+
+              suffixIconConstraints: BoxConstraints(
+                maxHeight: 25,
+                maxWidth: context.deviceWidth * .12,
+              ),
+              suffixIcon: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12.h),
+                child: suffixIcon,
+              ),
+              prefixIconConstraints: BoxConstraints(
+                maxHeight: 25,
+                maxWidth: context.deviceHeight * .12,
+              ),
+              prefixIconColor: context.theme.contentTeritiary,
+              suffixIconColor: context.theme.contentTeritiary,
+
+              error: errorText != null
+                  ? Row(
+                      children: [
+                        Icon(
+                          CupertinoIcons.exclamationmark_circle,
+                          size: 20.0,
+                          color: context.theme.negative,
+                        ),
+                        8.h.horizontalSpace,
+                        Text(
+                          errorText ?? '',
+                          style: TextStyle(
+                            color: context.theme.contentTeritiary,
+                          ),
+                        )
+                      ],
+                    )
+                  : null,
+            ),
+            inputFormatters: inputFormatters,
+            onChanged: onChanged,
+            onFieldSubmitted: onFieldSubmitted,
+            textInputAction: textInputAction,
+            autofocus: autoFocus ?? false,
+            maxLength: maxLength,
+            readOnly: readOnly ?? false,
+            onSaved: onSaved,
+            onTap: onTap,
+          ),
+        ),
+      ],
     );
   }
 }
